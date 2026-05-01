@@ -706,6 +706,158 @@ main {
   flex-shrink: 0;
 }
 
+/* ── Payment methods (residents page) ── */
+.payment-methods {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 1rem;
+  max-width: 520px;
+}
+
+.payment-method {
+  background: var(--forest-50);
+  border: 1px solid var(--forest-100);
+  border-radius: var(--radius);
+  padding: 1.25rem 1.5rem;
+}
+
+.pm-label {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: var(--forest-600);
+  margin-bottom: 0.65rem;
+}
+
+.pm-detail {
+  font-size: 0.875rem;
+  color: var(--neutral-500);
+  line-height: 1.65;
+}
+
+.pm-detail strong {
+  display: block;
+  font-weight: 600;
+  color: var(--neutral-900);
+  margin-bottom: 0.25rem;
+}
+
+/* ── Updates list (residents page) ── */
+.updates-list { list-style: none; }
+
+.updates-list li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.875rem 0;
+  border-bottom: 1px solid var(--neutral-100);
+}
+
+.updates-list li:last-child { border-bottom: none; }
+
+.update-list-main {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  min-width: 0;
+}
+
+.updates-list a {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--forest-700);
+  text-decoration: none;
+  transition: color 0.15s;
+}
+
+.updates-list a:hover { color: var(--forest-800); text-decoration: underline; }
+
+.updates-list .date {
+  font-size: 0.775rem;
+  color: var(--neutral-300);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* ── Update type tags ── */
+.update-tag {
+  display: inline-block;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  padding: 0.15rem 0.45rem;
+  border-radius: 4px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.update-tag-summary { background: var(--forest-50);  color: var(--forest-700); }
+.update-tag-update  { background: #fef9ec;            color: #9a7230; }
+
+/* ── Update document pages ── */
+.update-doc { max-width: 680px; }
+
+.update-doc-header {
+  margin-bottom: 2.25rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--neutral-100);
+}
+
+.update-meta-row {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  margin-bottom: 0.65rem;
+}
+
+.update-date {
+  font-size: 0.825rem;
+  color: var(--neutral-500);
+}
+
+.update-doc h1 {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  color: var(--neutral-900);
+  letter-spacing: -0.02em;
+  margin-bottom: 0.5rem;
+}
+
+.update-note {
+  font-size: 0.825rem;
+  color: var(--neutral-500);
+  background: var(--neutral-50);
+  border-left: 3px solid var(--neutral-300);
+  border-radius: 0 4px 4px 0;
+  padding: 0.6rem 0.875rem;
+  margin-top: 0.75rem;
+}
+
+.update-note a { color: var(--forest-700); }
+
+.update-doc h2 {
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--neutral-700);
+  margin-top: 2rem;
+  margin-bottom: 0.65rem;
+}
+
+.update-doc p {
+  font-size: 0.925rem;
+  color: var(--neutral-500);
+  line-height: 1.75;
+  margin-bottom: 0.5rem;
+}
+
+.update-doc p a { color: var(--forest-700); }
+
 /* ── Outline button ── */
 .btn-outline {
   display: inline-flex;

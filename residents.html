@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>For Residents — North Aldercroft Association</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a class="logo" href="index.html">
+      <span class="logo-primary">North Aldercroft</span>
+      <span class="logo-secondary">Association</span>
+    </a>
+    <nav aria-label="Main navigation">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="news.html">News &amp; Updates</a></li>
+        <li><a href="residents.html" aria-current="page">For Residents</a></li>
+        <li><a href="buyers.html">For Buyers</a></li>
+        <li><a href="documents.html">Documents</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<section class="page-header">
+  <div class="page-header-inner">
+    <h1>For Residents</h1>
+  </div>
+</section>
+
+<main>
+
+  <div class="section">
+    <div class="section-label"><h2>Pay Your Dues</h2></div>
+    <p class="prose" style="margin-bottom: 1.5rem;">Annual road maintenance dues are due by February 1 each year. Invoices are mailed in January. Two payment methods are accepted:</p>
+
+    <div class="payment-methods">
+      <div class="payment-method">
+        <div class="pm-label">Check by mail</div>
+        <div class="pm-detail">
+          <strong>Payable to: North Aldercroft Association</strong>
+          Mail to:<br>
+          [Treasurer mailing address]
+        </div>
+      </div>
+      <div class="payment-method">
+        <div class="pm-label">Venmo / Zelle</div>
+        <div class="pm-detail">
+          <strong>[Venmo or Zelle handle]</strong>
+          Include your address or parcel number in the memo so we can match your payment.
+        </div>
+      </div>
+    </div>
+
+    <p class="prose" style="margin-top: 1.25rem;">Questions about your invoice or parcel amount? Email <a href="mailto:board@aldercroftheights.org" style="color:var(--forest-700)">board@aldercroftheights.org</a>.</p>
+  </div>
+
+  <div class="section">
+    <div class="section-label"><h2>Board Updates</h2></div>
+    <p class="prose" style="margin-bottom: 1.25rem;">Plain-language summaries of board meetings and other updates from the association. For the complete official record of each meeting, see the <a href="news.html#minutes" style="color:var(--forest-700)">full minutes</a>.</p>
+    <ul class="updates-list" id="updates-list">
+      <li id="updates-loading">Loading updates&hellip;</li>
+    </ul>
+  </div>
+
+</main>
+
+<footer>
+  &copy; <script>document.write(new Date().getFullYear())</script> North Aldercroft Association
+</footer>
+
+<script src="updates/index.js"></script>
+<script>
+  (function () {
+    var list = document.getElementById('updates-list');
+    var loading = document.getElementById('updates-loading');
+
+    if (!window.UPDATES_INDEX || window.UPDATES_INDEX.length === 0) {
+      loading.textContent = 'No updates posted yet.';
+      return;
+    }
+
+    list.removeChild(loading);
+
+    var typeLabels = { summary: 'Meeting Summary', update: 'Board Update' };
+
+    window.UPDATES_INDEX.forEach(function (u) {
+      var d = new Date(u.date + 'T12:00:00');
+      var dateLabel = d.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+      var tagClass = u.type === 'summary' ? 'update-tag-summary' : 'update-tag-update';
+      var tagText  = typeLabels[u.type] || u.type;
+      var li = document.createElement('li');
+      li.innerHTML =
+        '<div class="update-list-main">' +
+          '<a href="updates/' + u.file + '">' + u.title + '</a>' +
+          '<span class="update-tag ' + tagClass + '">' + tagText + '</span>' +
+        '</div>' +
+        '<span class="date">' + dateLabel + '</span>';
+      list.appendChild(li);
+    });
+  })();
+</script>
+
+</body>
+</html>
