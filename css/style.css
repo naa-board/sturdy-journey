@@ -63,9 +63,9 @@ body {
   padding: 0 2rem;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
   height: 64px;
-  gap: 2rem;
+  gap: 2.5rem;
 }
 
 .logo {
