@@ -494,6 +494,136 @@ main {
 }
 .contact-card a:hover { text-decoration: underline; }
 
+/* ── Document list (documents.html) ── */
+.doc-list {
+  list-style: none;
+  border: 1px solid var(--neutral-100);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.doc-list li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding: 1.25rem 1.5rem;
+  background: var(--white);
+  border-bottom: 1px solid var(--neutral-100);
+  transition: background 0.15s;
+}
+
+.doc-list li:last-child { border-bottom: none; }
+.doc-list li:hover { background: var(--neutral-50); }
+
+.doc-info h3 {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--neutral-900);
+  margin-bottom: 0.2rem;
+}
+
+.doc-info p {
+  font-size: 0.825rem;
+  color: var(--neutral-500);
+  line-height: 1.5;
+}
+
+.doc-link {
+  font-size: 0.825rem;
+  font-weight: 600;
+  color: var(--forest-700);
+  text-decoration: none;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.doc-link:hover { text-decoration: underline; }
+
+/* ── Legal document pages ── */
+.legal-doc { max-width: 700px; }
+
+.legal-doc-header {
+  margin-bottom: 2.5rem;
+  padding-bottom: 1.75rem;
+  border-bottom: 1px solid var(--neutral-100);
+}
+
+.legal-doc-type {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--forest-600);
+  margin-bottom: 0.4rem;
+}
+
+.legal-doc h1 {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  color: var(--neutral-900);
+  letter-spacing: -0.02em;
+  margin-bottom: 0.25rem;
+}
+
+.legal-doc .meta {
+  font-size: 0.825rem;
+  color: var(--neutral-500);
+}
+
+.legal-doc h2 {
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--neutral-700);
+  margin-top: 2rem;
+  margin-bottom: 0.65rem;
+}
+
+.legal-doc p {
+  font-size: 0.9rem;
+  color: var(--neutral-500);
+  line-height: 1.75;
+  margin-bottom: 0.75rem;
+}
+
+.legal-doc p a { color: var(--forest-700); }
+.legal-doc p a:hover { text-decoration: none; }
+
+/* ── Dues table ── */
+.dues-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+  margin: 1.25rem 0 1.75rem;
+}
+
+.dues-table th {
+  text-align: left;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--neutral-500);
+  padding: 0.6rem 1rem;
+  border-bottom: 2px solid var(--neutral-100);
+}
+
+.dues-table td {
+  padding: 0.8rem 1rem;
+  color: var(--neutral-700);
+  border-bottom: 1px solid var(--neutral-100);
+}
+
+.dues-table td:last-child {
+  font-weight: 600;
+  color: var(--forest-800);
+}
+
+.dues-table tr:last-child td { border-bottom: none; }
+.dues-table tr:hover td { background: var(--neutral-50); }
+
 /* ── Prose (buyers page body text) ── */
 .prose {
   font-size: 1rem;
