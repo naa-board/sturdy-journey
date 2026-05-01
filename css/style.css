@@ -494,6 +494,108 @@ main {
 }
 .contact-card a:hover { text-decoration: underline; }
 
+/* ── Prose (buyers page body text) ── */
+.prose {
+  font-size: 1rem;
+  color: var(--neutral-500);
+  line-height: 1.8;
+  max-width: 640px;
+}
+.prose p + p { margin-top: 0.875rem; }
+
+/* ── Callout box ── */
+.callout {
+  margin-top: 1.75rem;
+  background: var(--forest-50);
+  border: 1px solid var(--forest-100);
+  border-left: 4px solid var(--forest-700);
+  border-radius: var(--radius);
+  padding: 1.5rem 1.75rem;
+  max-width: 400px;
+}
+
+.callout-label {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: var(--forest-600);
+  margin-bottom: 0.5rem;
+}
+
+.callout-amount {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--forest-800);
+  line-height: 1.1;
+  margin-bottom: 0.75rem;
+}
+
+.callout-amount span {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: var(--neutral-500);
+}
+
+.callout p {
+  font-size: 0.875rem;
+  color: var(--neutral-500);
+  line-height: 1.6;
+}
+
+/* ── Info list (buyers page) ── */
+.info-list {
+  margin-top: 0.875rem;
+  margin-left: 0;
+  list-style: none;
+  max-width: 560px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.info-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+  font-size: 0.925rem;
+  color: var(--neutral-700);
+  line-height: 1.5;
+}
+
+.info-list li::before {
+  content: '';
+  display: block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--forest-600);
+  margin-top: 0.45em;
+  flex-shrink: 0;
+}
+
+/* ── Outline button ── */
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  margin-top: 1.5rem;
+  padding: 0.65rem 1.25rem;
+  border: 1.5px solid var(--forest-700);
+  border-radius: var(--radius-sm);
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--forest-700);
+  text-decoration: none;
+  transition: background 0.15s, color 0.15s;
+}
+
+.btn-outline:hover {
+  background: var(--forest-700);
+  color: var(--white);
+}
+
 /* ── Footer ── */
 footer {
   background: var(--forest-900);
