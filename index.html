@@ -8,9 +8,12 @@
 </head>
 <body>
 
-<header>
-  <div class="nav-inner">
-    <a class="site-name" href="index.html">North Aldercroft Association</a>
+<header class="site-header">
+  <div class="header-inner">
+    <a class="logo" href="index.html">
+      <span class="logo-primary">North Aldercroft</span>
+      <span class="logo-secondary">Association</span>
+    </a>
     <nav aria-label="Main navigation">
       <ul>
         <li><a href="index.html" aria-current="page">Home</a></li>
@@ -21,17 +24,22 @@
   </div>
 </header>
 
-<div class="hero">
+<section class="hero">
   <div class="hero-inner">
-    <h1>Welcome to North Aldercroft</h1>
-    <p>A private road community in the Santa Cruz Mountains, dedicated to maintaining our shared road and supporting our neighbors.</p>
+    <p class="hero-eyebrow">Private Road Community &middot; Santa Cruz Mountains</p>
+    <h1>North Aldercroft<br>Association</h1>
+    <p class="hero-sub">Coordinating road maintenance and keeping neighbors connected along North Aldercroft Heights Road.</p>
+    <div class="hero-actions">
+      <a href="news.html" class="btn-primary">Latest Updates</a>
+      <a href="contact.html" class="btn-ghost">Contact the Board</a>
+    </div>
   </div>
-</div>
+</section>
 
 <main>
 
   <div class="section">
-    <h2>About the Association</h2>
+    <div class="section-label"><h2>About the Association</h2></div>
     <div class="about-body">
       <p>The North Aldercroft Association is a voluntary neighborhood organization serving the residents along North Aldercroft Heights Road. We coordinate road maintenance, share information about local conditions, and work together on issues that affect our community.</p>
       <p>Membership is open to all property owners and residents along the road. The association is governed by a volunteer board that meets several times per year. Meeting minutes and announcements are posted on this site.</p>
@@ -39,22 +47,25 @@
   </div>
 
   <div class="section">
-    <h2>Quick Links</h2>
+    <div class="section-label"><h2>What We Do</h2></div>
     <div class="card-grid">
       <div class="card">
+        <div class="card-icon card-icon-news" aria-hidden="true"></div>
         <h3>News &amp; Updates</h3>
-        <p>Road conditions, announcements, and upcoming work affecting the neighborhood.</p>
-        <a href="news.html">View updates &rarr;</a>
+        <p>Road conditions, upcoming maintenance, and neighborhood announcements.</p>
+        <a href="news.html" class="card-link">View updates &rarr;</a>
       </div>
       <div class="card">
+        <div class="card-icon card-icon-minutes" aria-hidden="true"></div>
         <h3>Meeting Minutes</h3>
         <p>Notes from past board and community meetings, organized by date.</p>
-        <a href="news.html#minutes">Browse minutes &rarr;</a>
+        <a href="news.html#minutes" class="card-link">Browse minutes &rarr;</a>
       </div>
       <div class="card">
+        <div class="card-icon card-icon-contact" aria-hidden="true"></div>
         <h3>Contact the Board</h3>
         <p>Questions, concerns, or items for a future agenda? Reach out by email.</p>
-        <a href="contact.html">Get in touch &rarr;</a>
+        <a href="contact.html" class="card-link">Get in touch &rarr;</a>
       </div>
     </div>
   </div>
