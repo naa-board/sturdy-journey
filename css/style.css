@@ -114,7 +114,7 @@ nav ul li a[aria-current="page"]{ color: var(--forest-700); background: var(--fo
     radial-gradient(ellipse at 85% 15%, rgba(45,106,79,0.2) 0%, transparent 50%),
     var(--forest-800);
   color: var(--white);
-  padding: 6rem 2rem 7rem;
+  padding: 6rem 0 7rem;
   overflow: hidden;
 }
 
@@ -133,6 +133,7 @@ nav ul li a[aria-current="page"]{ color: var(--forest-700); background: var(--fo
 .hero-inner {
   max-width: var(--max-width);
   margin: 0 auto;
+  padding: 0 2rem;
   position: relative;
   z-index: 1;
 }
@@ -204,11 +205,11 @@ nav ul li a[aria-current="page"]{ color: var(--forest-700); background: var(--fo
   background:
     radial-gradient(ellipse at 25% 70%, rgba(64,145,108,0.2) 0%, transparent 55%),
     var(--forest-800);
-  padding: 3.5rem 2rem 3.5rem;
+  padding: 3.5rem 0;
   color: var(--white);
 }
 
-.page-header-inner { max-width: var(--max-width); margin: 0 auto; }
+.page-header-inner { max-width: var(--max-width); margin: 0 auto; padding: 0 2rem; }
 
 .page-header h1 {
   font-family: var(--font-display);
@@ -892,9 +893,11 @@ footer {
 /* ── Responsive ── */
 @media (max-width: 600px) {
   .header-inner { padding: 0 1.25rem; height: 56px; }
-  .hero { padding: 4rem 1.25rem 5rem; }
+  .hero { padding: 4rem 0 5rem; }
+  .hero-inner { padding: 0 1.25rem; }
   .hero::after { height: 48px; }
-  .page-header { padding: 2.5rem 1.25rem; }
+  .page-header { padding: 2.5rem 0; }
+  .page-header-inner { padding: 0 1.25rem; }
   main { padding: 2.5rem 1.25rem; }
   .announcement-list li { grid-template-columns: 1fr; }
   .ann-date-badge { flex-direction: row; align-items: baseline; gap: 0.3rem; margin-bottom: 0.4rem; }
