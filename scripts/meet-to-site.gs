@@ -44,8 +44,8 @@
 // ── Config ────────────────────────────────────────────────────────────────────
 
 const DRIVE_FOLDER_ID = 'YOUR_FOLDER_ID_HERE'; // ← paste your Drive folder ID
-const GITHUB_OWNER    = 'scott4382';
-const GITHUB_REPO     = 'sturdy-journey';
+const GITHUB_OWNER    = 'naa-board';
+const GITHUB_REPO     = 'legendary-umbrella';
 const GITHUB_BRANCH   = 'main';                // ← change if your branch differs
 const CLAUDE_MODEL    = 'claude-sonnet-4-6';
 
