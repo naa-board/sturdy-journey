@@ -1,9 +1,11 @@
+$ cat /home/user/sturdy-journey/news.html
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>For Residents — North Aldercroft Association</title>
+  <title>News &amp; Updates — North Aldercroft Association</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -17,8 +19,8 @@
     <nav aria-label="Main navigation">
       <ul>
         <li><a href="index.html">Home</a></li>
-        <li><a href="news.html">News &amp; Updates</a></li>
-        <li><a href="residents.html" aria-current="page">For Residents</a></li>
+        <li><a href="news.html" aria-current="page">News &amp; Updates</a></li>
+        <li><a href="residents.html">For Residents</a></li>
         <li><a href="buyers.html">For Buyers</a></li>
         <li><a href="documents.html">Documents</a></li>
         <li><a href="contact.html">Contact</a></li>
@@ -30,42 +32,60 @@
 
 <section class="page-header">
   <div class="page-header-inner">
-    <h1>For Residents</h1>
+    <h1>News &amp; Updates</h1>
   </div>
 </section>
 
 <main>
 
   <div class="section">
-    <div class="section-label"><h2>Pay Your Dues</h2></div>
-    <p class="prose" style="margin-bottom: 1.5rem;">Annual road maintenance dues are due by February 1 each year. Invoices are mailed in January. Two payment methods are accepted:</p>
+    <div class="section-label"><h2>Announcements</h2></div>
+    <!-- Add new announcements at the top of this list -->
+    <ul class="announcement-list">
 
-    <div class="payment-methods">
-      <div class="payment-method">
-        <div class="pm-label">Check by mail</div>
-        <div class="pm-detail">
-          <strong>Payable to: North Aldercroft Association</strong>
-          Mail to:<br>
-          [Treasurer mailing address]
+      <li>
+        <div class="ann-date-badge">
+          <span class="month">Apr</span>
+          <span class="day">14</span>
+          <span class="year">2025</span>
         </div>
-      </div>
-      <div class="payment-method">
-        <div class="pm-label">Venmo / Zelle</div>
-        <div class="pm-detail">
-          <strong>[Venmo or Zelle handle]</strong>
-          Include your address or parcel number in the memo so we can match your payment.
+        <div class="ann-content">
+          <div class="ann-title">Spring Pothole Patching — Week of April 21</div>
+          <div class="ann-body">A contractor will be filling potholes along the upper section of North Aldercroft Heights Road during the week of April 21. Expect brief single-lane delays between 9 am and 3 pm. No road closures are planned.</div>
         </div>
-      </div>
-    </div>
+      </li>
 
-    <p class="prose" style="margin-top: 1.25rem;">Questions about your invoice or parcel amount? Email <a href="mailto:board@aldercroftheights.org" style="color:var(--forest-700)">board@aldercroftheights.org</a>.</p>
+      <li>
+        <div class="ann-date-badge">
+          <span class="month">Feb</span>
+          <span class="day">28</span>
+          <span class="year">2025</span>
+        </div>
+        <div class="ann-content">
+          <div class="ann-title">Winter Storm Debris Cleared</div>
+          <div class="ann-body">The slide debris from the February storms has been cleared. Thank you to everyone who helped coordinate the cleanup effort. A report on costs and the road condition assessment will be discussed at the March board meeting.</div>
+        </div>
+      </li>
+
+      <li>
+        <div class="ann-date-badge">
+          <span class="month">Jan</span>
+          <span class="day">6</span>
+          <span class="year">2025</span>
+        </div>
+        <div class="ann-content">
+          <div class="ann-title">2025 Annual Dues — Invoices Mailed</div>
+          <div class="ann-body">Annual road maintenance dues invoices have been mailed. Payment is due within 30 days of receipt. Pay by check (P.O. Box 1498, Los Gatos, CA 95031-1498), Zelle (board@aldercroftheights.org), or PayPal — contact the bookkeeper at bookkeeper.naa@gmail.com for a PayPal invoice. Residents 62 and older qualify for a 20% senior discount.</div>
+        </div>
+      </li>
+
+    </ul>
   </div>
 
-  <div class="section">
-    <div class="section-label"><h2>Board Updates</h2></div>
-    <p class="prose" style="margin-bottom: 1.25rem;">Plain-language summaries of board meetings and other updates from the association. For the complete official record of each meeting, see the <a href="news.html#minutes" style="color:var(--forest-700)">full minutes</a>.</p>
-    <ul class="updates-list" id="updates-list">
-      <li id="updates-loading">Loading updates&hellip;</li>
+  <div class="section" id="minutes">
+    <div class="section-label"><h2>Meeting Minutes</h2></div>
+    <ul class="minutes-list" id="minutes-list">
+      <li id="minutes-loading">Loading minutes&hellip;</li>
     </ul>
   </div>
 
@@ -75,33 +95,26 @@
   &copy; <script>document.write(new Date().getFullYear())</script> North Aldercroft Association
 </footer>
 
-<script src="updates/index.js"></script>
+<script src="minutes/index.js"></script>
 <script>
   (function () {
-    var list = document.getElementById('updates-list');
-    var loading = document.getElementById('updates-loading');
+    var list = document.getElementById('minutes-list');
+    var loading = document.getElementById('minutes-loading');
 
-    if (!window.UPDATES_INDEX || window.UPDATES_INDEX.length === 0) {
-      loading.textContent = 'No updates posted yet.';
+    if (!window.MINUTES_INDEX || window.MINUTES_INDEX.length === 0) {
+      loading.textContent = 'No minutes posted yet.';
       return;
     }
 
     list.removeChild(loading);
 
-    var typeLabels = { summary: 'Meeting Summary', update: 'Board Update' };
-
-    window.UPDATES_INDEX.forEach(function (u) {
-      var d = new Date(u.date + 'T12:00:00');
-      var dateLabel = d.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
-      var tagClass = u.type === 'summary' ? 'update-tag-summary' : 'update-tag-update';
-      var tagText  = typeLabels[u.type] || u.type;
+    window.MINUTES_INDEX.forEach(function (m) {
+      var d = new Date(m.date + 'T12:00:00');
+      var label = d.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
       var li = document.createElement('li');
       li.innerHTML =
-        '<div class="update-list-main">' +
-          '<a href="updates/' + u.file + '">' + u.title + '</a>' +
-          '<span class="update-tag ' + tagClass + '">' + tagText + '</span>' +
-        '</div>' +
-        '<span class="date">' + dateLabel + '</span>';
+        '<a href="minutes/' + m.file + '">' + m.label + '</a>' +
+        '<span class="date">' + label + '</span>';
       list.appendChild(li);
     });
   })();
